@@ -104,3 +104,16 @@ form button:hover {
     display: flex;
     gap: 10px;
 }
+
+/* .todo-check {
+    pointer-events: none;
+}
+
+.todo-trash {
+    pointer-events: none;
+} */
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}

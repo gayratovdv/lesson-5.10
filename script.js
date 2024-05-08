@@ -21,13 +21,15 @@ function addTodo(event) {
     todoDiv.appendChild(newDiv)
     newTodo.innerHTML = todoInput.value;
 
+    // create check
 
-    // const todoCheck = document.createElement("button")
-    // todoCheck.innerHTML = '<i class="fa-solid fa-check"></i>';
-    // todoCheck.classList.add("todo-check")
+    const todoCheck = document.createElement("button")
+    todoCheck.innerHTML = '<i class="fa-solid fa-check"></i>';
+    todoCheck.classList.add("todo-check")
 
-    // newDiv.appendChild(todoCheck)
+    newDiv.appendChild(todoCheck)
 
+    // create trash
 
     const todoTrash = document.createElement("button")
     todoTrash.innerHTML = '<i class="fa-solid fa-trash"></i>';
@@ -35,6 +37,7 @@ function addTodo(event) {
 
     newDiv.appendChild(todoTrash)
 
+    // trash
 
     todoTrash.addEventListener("click", trashEvent)
 
@@ -44,13 +47,15 @@ function addTodo(event) {
         todoDiv.remove();
     }
 
-    // todoCheck.addEventListener("click", checkEvent)
+    // check
 
-    // function checkEvent(event) {
-    //     event.preventDefault();
+    todoCheck.addEventListener("click", checkEvent)
 
-    //     todoDiv.classList.toggle("completed");
-    // }
+    function checkEvent(event) {
+        event.preventDefault(); 
+
+        todoDiv.classList.toggle("completed");
+    }
 
     todoInput.value = "";
 }
